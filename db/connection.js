@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/passport').then(() => {
+mongoose.connect('mongodb://localhost/trendsters').then(() => {
   console.log(`🤖  MongoDB is alive and ready to serve.`)
 })
 
