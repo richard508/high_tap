@@ -1,4 +1,5 @@
 const passport = require('passport')
+const User = require('../models/User')
 const authController = {
   signUp: (req, res) => {
     if (req.isAuthenticated()) { 

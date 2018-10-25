@@ -11,8 +11,8 @@ const passportConfig = (passport) => {
 
   const localSignupCallback = (req, email, password, callback) => {
     // Find a single user by email address
-    User.findOne({ 'email': email }).then((user) => {
-
+    User.findOne({$or: [{'email': email}, {'username': req.body.username}]}).then((user) => {
+      
       // If the user exists
       if (user) {
         // Throw an error the the email is in use
@@ -21,9 +21,14 @@ const passportConfig = (passport) => {
         // Else create a user.
         const newUser = new User()
         newUser.email = email
+        newUser.username = req.body.username
+        newUser.enum = req.body.ina
+        newUser.connections = []
+        newUser.cRequest = []
         // Encrypt the users password for security.
-        // We need to create this function
-        newUser.password = newUser.encrypt(password)
+        if(req.body.password === req.body.confirmPassword){
+          newUser.password = newUser.encrypt(password)
+        } else return callback(null, false, req.flash('signupMessage', "Password doesn't match"))
 
         // Save the user, and return the saved user. 
         newUser.save().then((saved) => {
