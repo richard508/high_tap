@@ -3,6 +3,7 @@ let router = express.Router()
 
 const applicationController = require('../controllers/application')
 const authController = require('../controllers/auth')
+const userController = require('../controllers/user')
 
 // GET /
 router.get('/', applicationController.index)
@@ -24,5 +25,9 @@ router.post('/login', authController.checkUser)
 
 // GET /logout
 router.get('/logout', authController.logOut)
+
+router.get('/user/:id/profile', userController.profile)
+// router.get('/user/:id/edit', userController.edit)
+// router.get('/user/:id', userController.update)
 
 module.exports = router
