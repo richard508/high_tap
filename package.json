@@ -1,0 +1,35 @@
+{
+  "name": "high_tap",
+  "version": "1.0.0",
+  "description": "\"Joining influencers and Advertisers in one app\"",
+  "main": "server.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "social",
+    "Instagram"
+  ],
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.1.0",
+    "ejs": "~0.8.5",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^1.1.0",
+    "express-session": "^1.15.6",
+    "hbs": "^4.0.0",
+    "method-override": "~1.0.0",
+    "mongoose": "^5.3.5",
+    "morgan": "~1.0.0",
+    "passport": "~0.1.17",
+    "passport-facebook": "~1.0.2",
+    "passport-local": "~0.1.6"
+  },
+  "author": "Richard Almonte",
+  "license": "ISC"
+}
