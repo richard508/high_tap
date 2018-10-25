@@ -1,29 +1,32 @@
 const mongoose = require('../db/connection')
+const Schema = mongoose.Schema
 const bcrypt = require('bcrypt-nodejs')
-require('enum').register()
+
 
 const User = mongoose.Schema({
   username: String,
   email: String,
   password: String,
-  active: Boolean,
-  enum: [{1: 'Influencer', 2:'Advertiser'}],
+  active: {
+    type: Boolean,
+    default: false
+  },
+  ina: ['Influencer', 'Advertiser'],
   connections: Array,
+  interests: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Interest'
+  }],
   cRequest: Array
 })
 
-  User.methods.encrypt = function(password) {
-    if (req.body.password !== req.body.confirmPassword) {
-      var err = new Error('Passwords do not match.');
-      err.status = 400;
-      return next(err);
-    }else {
-      return bcrypt.hashSync(password, bcrypt.genSaltSync(8))
-    }
-  }
+User.methods.encrypt = function(password) {
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(8))
+}
 
-  User.methods.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.password)
-  }
+
+User.methods.validPassword = function(password) {
+  return bcrypt.compareSync(password, this.password)
+}
 
 module.exports = mongoose.model('User', User)
