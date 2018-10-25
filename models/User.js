@@ -1,11 +1,15 @@
 const mongoose = require('../db/connection')
 const bcrypt = require('bcrypt-nodejs')
+require('enum').register()
 
 const User = mongoose.Schema({
   username: String,
-  googleId: String,
   email: String,
-  password: String
+  password: String,
+  active: Boolean,
+  enum: [{1: 'Influencer', 2:'Advertiser'}],
+  connections: Array,
+  cRequest: Array
 })
 
   User.methods.encrypt = function(password) {
