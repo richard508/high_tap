@@ -1,0 +1,13 @@
+<p>Update Interest:</p>
+<form action="/user/{{user._id}}?_method=PUT" method="POST">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input required class="form-control" type="text" name="email" id="email" value="{{user.email}}">
+  </div>
+  {{#each interest}}
+    <div>
+      <input class="ina1" type="checkbox" name="interests" value="{{_id}}"> {{interestList}}
+    </div>
+  {{/each}}
+  <button type="submit">Update my interest</button>
+</form>
