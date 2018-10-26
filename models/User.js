@@ -7,6 +7,9 @@ const User = mongoose.Schema({
   username: String,
   email: String,
   password: String,
+  age: Number,
+  familyStatus: String,
+  location: String,
   active: {
     type: Boolean,
     default: false

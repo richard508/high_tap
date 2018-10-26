@@ -4,6 +4,23 @@
     <label for="email">Email</label>
     <input required class="form-control" type="text" name="email" id="email" value="{{user.email}}">
   </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input required class="form-control" type="number" name="age" id="age" value="{{user.age}}">
+  </div>
+  <div class="form-group">
+    <label for="familyStatus">Family Status</label>
+    <select name="familyStatus" class="custom-select" id="inputGroupSelect01">
+    <option selected>Choose...</option>
+    <option value="Single">Single</option>
+    <option value="Married">Married</option>
+    <option value="Married with Kids">Married with Kids</option>
+  </select>
+  </div>
+  <div class="form-group">
+    <label for="location">Loction</label>
+    <input required class="form-control" type="text" name="location" id="location" placeholder="Enter City, State"value="{{user.location}}">
+  </div>
   {{#each interest}}
     <div>
       <input class="ina1" type="checkbox" name="interests" value="{{_id}}"> {{interestList}}
