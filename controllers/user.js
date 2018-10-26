@@ -3,9 +3,14 @@ const Interst = require('../models/Interest')
 
 const userController = {
   profile: (req, res) => {
-    User.findById(req.params.id).populate('interests').then(userFromDb => {
-      res.render('user/profile', { 
-        user: userFromDb
+    if (req.isAuthenticated()) { 
+      Interest.find().then((interest) => {
+        User.findById(req.params.id).populate('interests').then(userFromDb => {
+          res.render('user/profile', { 
+            user: userFromDb,
+            interest: interest
+          })
+        })
       })
     })
   },
