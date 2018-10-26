@@ -1,4 +1,4 @@
-.navbar {
+.bar {
   background: #000;
 }
 
@@ -10,8 +10,12 @@
   color: #fff;
 }
 
+.navbar-default .navbar-nav > li > a:hover {
+  color: #ccc;
+}
+
 .wrapper {
-  height: 20vh;
+  height: 10vh;
 }
 
 .flexNav {
@@ -36,5 +40,14 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.hero {
+  background-image: url(../img/alps.jpg);
+  background-color: #bdc406;
+  height: 574px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 /*# sourceMappingURL=style.css.map */

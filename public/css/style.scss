@@ -1,7 +1,8 @@
 $dark: #000;
 $light: #fff;
+$lightGray: #ccc;
 
-.navbar{
+.bar{
   background: $dark;
 }
 .navbar-default .navbar-brand{
@@ -9,21 +10,30 @@ $light: #fff;
 }
 .navbar-default .navbar-nav>li>a{
   color: $light;
+  &:hover{
+    color: $lightGray;
+  }
 }
 .wrapper{
-  height: 20vh;
+  height: 10vh;
 }
 .flexNav{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-
 .absolute-nav{
   position: absolute;
   top: 0px;
   width: 100%;
   display: flex;
   align-items: center;
+}
+.hero{
+  background-image: url(../img/alps.jpg);
+    background-color: rgb(189, 196, 6);
+    height: 574px;
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center; 
 }
