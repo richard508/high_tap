@@ -22,9 +22,14 @@ const passportConfig = (passport) => {
         const newUser = new User()
         newUser.email = email
         newUser.username = req.body.username
-        newUser.enum = req.body.ina
-        newUser.connections = []
-        newUser.cRequest = []
+        newUser.ina = req.body.ina
+        newUser.iFollower = req.body.iFollower
+        newUser.tier = req.body.tier
+        newUser.companyName = req.body.companyName
+        newUser.category = req.body.category
+        newUser.size = req.body.size
+
+
         // Encrypt the users password for security.
         if(req.body.password === req.body.confirmPassword){
           newUser.password = newUser.encrypt(password)

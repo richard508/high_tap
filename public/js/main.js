@@ -4,3 +4,10 @@ $('.submit').click(function(e){
     $(".ina").append( "<b>Hello </b>" );
   }
 })
+
+$('.ina1').click(function(){
+    $('.inf').toggleClass('hidden')
+})
+$('.ina2').click(function(){
+  $('.ads').toggleClass('hidden')
+})

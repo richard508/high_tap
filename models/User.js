@@ -15,6 +15,11 @@ const User = mongoose.Schema({
     default: false
   },
   ina: ['Influencer', 'Advertiser'],
+  iFollower: Number,
+  tier: Number,
+  companyName: String,
+  category: String,
+  size: Number,
   connections: Array,
   interests: [{
     type: Schema.Types.ObjectId,
