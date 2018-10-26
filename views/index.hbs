@@ -1,1 +1,4 @@
 Welcome {{currentUser}}
+{{#if currentUser}}
+<a href="/user/{{currentUser._id}}/profile">My Profile</a>
+{{/if}}

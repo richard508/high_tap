@@ -1,5 +1,5 @@
 const User = require('../models/User')
-const Interst = require('../models/Interest')
+const Interest = require('../models/Interest')
 
 const userController = {
   profile: (req, res) => {
@@ -30,6 +30,13 @@ const userController = {
       res.redirect(`/`)
     }
   },
+  update: (req, res) => {
+    console.log(req.body)
+    User.findByIdAndUpdate(req.params.id, req.body).then((updatedUser) => {
+      res.redirect(`/user/${updatedUser._id}/profile`)
+    })
+  }
+  // delete: (req, res) => {}
 }
 
 module.exports = userController

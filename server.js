@@ -17,8 +17,6 @@ app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-// allow to delete and update in a form
-app.use(methodOverride('_method'))
 
 // use handlebars
 app.set('view engine', 'hbs')
@@ -36,6 +34,10 @@ app.use(passport.session())
 
 // This is where we will build out our custom passport configurations
 require('./config/passport')(passport)
+
+
+// allow to delete and update in a form
+app.use(methodOverride('_method'))
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user
