@@ -1,0 +1,40 @@
+.navbar {
+  background: #000;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+
+.wrapper {
+  height: 20vh;
+}
+
+.flexNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.absolute-nav {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=style.css.map */

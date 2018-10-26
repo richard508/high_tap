@@ -1,0 +1,29 @@
+$dark: #000;
+$light: #fff;
+
+.navbar{
+  background: $dark;
+}
+.navbar-default .navbar-brand{
+  color: $light;
+}
+.navbar-default .navbar-nav>li>a{
+  color: $light;
+}
+.wrapper{
+  height: 20vh;
+}
+.flexNav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.absolute-nav{
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
