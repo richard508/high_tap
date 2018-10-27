@@ -24,12 +24,18 @@ const passportConfig = (passport) => {
         newUser.username = req.body.username
         newUser.ina = req.body.ina
         newUser.iFollower = req.body.iFollower
-        newUser.tier = req.body.tier
+        if (newUser.iFollower < 5000) {
+          newUser.tier = "Low"  
+        } else if (newUser.iFollower < 50000){
+          newUser.tier = "Mid"
+        } else{
+          newUser.tier = "Top"
+        }
         newUser.companyName = req.body.companyName
         newUser.category = req.body.category
         newUser.size = req.body.size
 
-
+        console.log(newUser)
         // Encrypt the users password for security.
         if(req.body.password === req.body.confirmPassword){
           newUser.password = newUser.encrypt(password)
