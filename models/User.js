@@ -16,7 +16,7 @@ const User = mongoose.Schema({
   },
   ina: ['Influencer', 'Advertiser'],
   iFollower: Number,
-  tier: Number,
+  tier: String,
   companyName: String,
   category: String,
   size: Number,

@@ -28,7 +28,8 @@ router.get('/logout', authController.logOut)
 
 router.get('/user/:id/profile', userController.profile)
 router.get('/user/:id/profile/edit', userController.edit)
+router.put('/user/:id', userController.update)
 router.patch('/user/:id', userController.update)
-router.all('/user/:id', userController.update)
+router.delete('/user/:id', userController.delete)
 
 module.exports = router

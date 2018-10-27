@@ -28,12 +28,15 @@ const userController = {
     }
   },
   update: (req, res) => {
-    console.log(req.body)
     User.findByIdAndUpdate(req.params.id, req.body).then((updatedUser) => {
       res.redirect(`/user/${updatedUser._id}/profile`)
     })
+  },
+  delete: (req, res) => {
+    User.findByIdAndRemove(req.params.id).then(() => {
+      res.redirect('/')
+    })
   }
-  // delete: (req, res) => {}
 }
 
 module.exports = userController
