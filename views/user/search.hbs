@@ -1,9 +1,4 @@
-<p>Update Interest:</p>
-<form action="/user/{{user._id}}?_method=PUT" method="POST">
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input required class="form-control" type="text" name="email" id="email" value="{{user.email}}">
-  </div>
+<form action="/user/{{currentUser._id}}/search" method="GET">
   <div class="form-group">
     <label for="age">Age</label>
     <input required class="form-control" type="number" name="age" id="age" value="{{user.age}}">
@@ -25,9 +20,20 @@
       <input class="ina1" type="checkbox" name="interests" value="{{_id}}"> {{interestList}}
     </div>
   {{/each}}
-  <button type="submit">Update my interest</button>
+  <button type="submit">Search</button>
 </form>
+{{#each user}}
 
-<form action="/user/{{user._id}}?_method=DELETE" method="POST">
-  <button type="submit">DELETE MY PROFILE</button>
-</form>
+  <p>Username: {{username}}</p>
+  <p>Email: {{email}}</p>
+  <p>Type: {{ina}}</p>
+  <p>Age: {{age}}</p>
+  <p>Location: {{location}}</p>
+  <p>Family: {{familyStatus}}</p>
+
+
+  My Interests:
+  {{#each interests}}
+    <span>{{interestList}}</span>
+  {{/each}}
+{{/each}}

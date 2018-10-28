@@ -2,6 +2,18 @@ const User = require('../models/User')
 const Interest = require('../models/Interest')
 
 const userController = {
+  search: (req, res) => {
+    if (req.isAuthenticated()) { 
+      console.log(req.query)
+      User.find(req.query).populate('interests').then(userFromDb => {
+        res.render('user/search', { 
+          user: userFromDb,
+        })
+      })
+    } else {
+      res.redirect(`/`)
+    }
+  },
   profile: (req, res) => {
     if (req.isAuthenticated()) { 
       User.findById(req.params.id).populate('interests').then(userFromDb => {

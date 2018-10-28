@@ -27,6 +27,7 @@ router.post('/login', authController.checkUser)
 router.get('/logout', authController.logOut)
 
 router.get('/user/:id/profile', userController.profile)
+router.get('/user/:id/search', userController.search)
 router.get('/user/:id/profile/edit', userController.edit)
 router.put('/user/:id', userController.update)
 router.patch('/user/:id', userController.update)
