@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const Interest = require('../models/Interest')
+const axios = require('axios')
 
 const userController = {
   search: (req, res) => {

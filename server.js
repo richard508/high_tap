@@ -46,8 +46,6 @@ app.use(function (req, res, next) {
 
 app.use('/', routes)
 
-// app.use('/', usersController)
-
 const PORT = process.env.PORT || 7777
 
 app.listen(PORT, () => {

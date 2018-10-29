@@ -4,12 +4,10 @@ let router = express.Router()
 const applicationController = require('../controllers/application')
 const authController = require('../controllers/auth')
 const userController = require('../controllers/user')
+const axios = require('axios')
 
 // GET /
 router.get('/', applicationController.index)
-
-// Restricted (cool people only!)
-router.get('/secret', applicationController.secret)
 
 // GET /signup
 router.get('/signup', authController.signUp)

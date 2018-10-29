@@ -24,8 +24,7 @@ const User = mongoose.Schema({
   interests: [{
     type: Schema.Types.ObjectId,
     ref: 'Interest'
-  }],
-  cRequest: Array
+  }]
 })
 
 User.methods.encrypt = function(password) {
