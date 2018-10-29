@@ -1,7 +1,7 @@
 <form action="/user/{{currentUser._id}}/search" method="GET">
   <div class="form-group">
     <label for="age">Age</label>
-    <input required class="form-control" type="number" name="age" id="age" value="{{user.age}}">
+    <input class="form-control" type="number" name="age" id="age" value="{{user.age}}">
   </div>
   <div class="form-group">
     <label for="familyStatus">Family Status</label>
@@ -13,7 +13,7 @@
   </div>
   <div class="form-group">
     <label for="location">Loction</label>
-    <input required class="form-control" type="text" name="location" id="location" placeholder="Enter City, State"value="{{user.location}}">
+    <input class="form-control" type="text" name="location" id="location" placeholder="Enter City, State"value="{{user.location}}">
   </div>
   {{#each interest}}
     <div>
@@ -22,6 +22,8 @@
   {{/each}}
   <button type="submit">Search</button>
 </form>
+<a href="/user/{{currentUser._id}}/search">Clear search</a>
+<br /><br /><br />
 {{#each user}}
 
   <p>Username: {{username}}</p>
