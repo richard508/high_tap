@@ -7,6 +7,7 @@ const session = require('express-session')
 const methodOverride = require('method-override')
 const routes = require('./routes/index')
 const passport = require('passport')
+const socket = require('socket.io')
 
 // extra data in out server logs
 app.use(morgan('dev'))
@@ -48,6 +49,21 @@ app.use('/', routes)
 
 const PORT = process.env.PORT || 7777
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`🔥  🔥  🕺  🔥  🔥 Disco Inferno on ${PORT}`)
+})
+
+const io = socket(server)
+
+io.on('connection', (socket) =>{
+  console.log("Connected on web-socket", socket.id)
+  socket.on('chat', function(data){
+    io.sockets.emit('chat', data)
+  })
+  socket.on('typing', function(data){
+    socket.broadcast.emit('typing', data)
+  })
+  socket.on('disconnect', function () {
+    console.log('bye bye');
+  })
 })

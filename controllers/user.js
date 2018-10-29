@@ -26,6 +26,17 @@ const userController = {
       res.redirect(`/`)
     }
   },
+  chat: (req, res) => {
+    if (req.isAuthenticated()) { 
+      User.findById(req.params.id).then(userFromDb => {
+        res.render('user/chat', { 
+          user: userFromDb,
+        })
+      })
+    } else {
+      res.redirect(`/`)
+    }
+  },
   edit: (req, res) => {
     if (req.isAuthenticated()) { 
       Interest.find().then((interest) => {

@@ -1,0 +1,12 @@
+<div id="chat">
+  <h2>Chatting with {{user.username}}</h2>
+  <div id="chat-window">
+      <div id="output"></div>
+      <div id="feedback"></div>
+  </div>
+  <input id="handle" class="chat-input" type="text" value="{{currentUser.username}}"  />
+  <input id="message" class="chat-input" type="text" placeholder="Message" />
+  <button class="chat-button" id="send">Send</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+<script src="/js/chat.js"></script>
