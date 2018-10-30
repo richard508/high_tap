@@ -11,7 +11,7 @@ const authController = {
   },
   createUser: (req, res) => {
     const signupStrategy = passport.authenticate('local-signup', {
-      successRedirect: '/',
+      successRedirect: `/`,
       failureRedirect: 'signup',
       failureFlash: true
     })
@@ -26,12 +26,14 @@ const authController = {
     }
   },
   checkUser: (req, res) => {
-    const loginStrategy = passport.authenticate('local-login', {
-      successRedirect: '/',
-      failureRedirect: 'login',
-      failureFlash: true
+    User.find({email: req.body.email}).then((user) => {
+      const loginStrategy = passport.authenticate('local-login', {
+        successRedirect: `/user/${user[0]._id}/profile`,
+        failureRedirect: 'login',
+        failureFlash: true
+      })
+      return loginStrategy(req, res)
     })
-    return loginStrategy(req, res)
   },
   logOut: (req, res) => {
     req.logOut()

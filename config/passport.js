@@ -35,7 +35,6 @@ const passportConfig = (passport) => {
         newUser.category = req.body.category
         newUser.size = req.body.size
 
-        console.log(newUser)
         // Encrypt the users password for security.
         if(req.body.password === req.body.confirmPassword){
           newUser.password = newUser.encrypt(password)
