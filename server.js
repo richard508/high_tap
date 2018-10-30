@@ -26,7 +26,7 @@ app.set('view engine', 'hbs')
 app.use(express.static(__dirname + '/public'))
 
 // Used by passport to handle seesions
-app.use(session({ secret: 'WDI-GENERAL-ASSEMBLY-EXPRESS' }))
+app.use(session({ secret: 'HIGH_TAP_SCERECTS' }))
 app.use(flash())
 // Creates an instance of passport to be used in Express
 app.use(passport.initialize())

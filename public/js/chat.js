@@ -1,5 +1,5 @@
 // Make connection
-const socket = io.connect('http://localhost:7777')
+const socket = io.connect('https://high-tap.herokuapp.com')
 
 // Query DOM
 var message = document.getElementById('message'),

@@ -5,7 +5,6 @@ const axios = require('axios')
 const userController = {
   search: (req, res) => {
     if (req.isAuthenticated()) { 
-      console.log(req.query)
       User.find(req.query).populate('interests').then(userFromDb => {
         res.render('user/search', { 
           user: userFromDb,
