@@ -1,11 +1,13 @@
+<section class="profile">
 <form action="/user/{{currentUser._id}}/search" method="GET">
   <div class="form-group">
     <label for="age">Age</label>
-    <input class="form-control" type="number" name="age" id="age" value="{{user.age}}">
+    <input class="form-control" type="number" name="age" id="age">
   </div>
   <div class="form-group">
     <label for="familyStatus">Family Status</label>
     <select name="familyStatus" class="custom-select" id="inputGroupSelect01">
+      <option></option>
     <option value="Single">Single</option>
     <option value="Married">Married</option>
     <option value="Married with Kids">Married with Kids</option>
@@ -13,7 +15,7 @@
   </div>
   <div class="form-group">
     <label for="location">Loction</label>
-    <input class="form-control" type="text" name="location" id="location" placeholder="Enter City, State"value="{{user.location}}">
+    <input class="form-control" type="text" name="location" id="location" placeholder="Enter City, State">
   </div>
   {{#each interest}}
     <div>
@@ -24,8 +26,9 @@
 </form>
 <a href="/user/{{currentUser._id}}/search">Clear search</a>
 <br /><br /><br />
+</section>
 {{#each user}}
-
+<section class="card profile">
   <p>Username: {{username}}</p>
   <p>Email: {{email}}</p>
   <p>Type: {{ina}}</p>
@@ -39,6 +42,7 @@
     <span>{{interestList}}</span>
   {{/each}}
   <br />
-  <a href="/user/{{_id}}/chat"><button class="btn btn-primary" id="{{_id}}">Connect us</button></a>
+  <a href="/user/{{_id}}/profile"><button class="btn btn-primary" id="{{_id}}">Connect us</button></a>
   <br /><br /><br />
+</section>
 {{/each}}
