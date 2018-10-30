@@ -20,6 +20,8 @@
     <label for="location">Loction</label>
     <input required class="form-control" type="text" name="location" id="location" placeholder="Enter City, State"value="{{user.location}}">
   </div>
+
+  <p>Update my interests:</p>
   {{#each interest}}
     <div>
       <input class="ina1" type="checkbox" name="interests" value="{{_id}}"> {{interestList}}
@@ -27,7 +29,10 @@
   {{/each}}
   <button type="submit">Update my interest</button>
 </form>
-
+<br />
+<br />
+<br />
+<h3 style="color:red;">DANGER ZONE:</h3>
 <form action="/user/{{user._id}}?_method=DELETE" method="POST">
   <button type="submit">DELETE MY PROFILE</button>
 </form>
