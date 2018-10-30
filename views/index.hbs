@@ -1,4 +1,10 @@
-Welcome {{currentUser}}
 {{#if currentUser}}
-<a href="/user/{{currentUser._id}}/profile">My Profile</a>
+ Welcome {{currentUser.username}}. THnak you for signup to High-Tap. To have the perfect full experience of our site please comeplete your profile at <a href="user/{{currentUser._id}}/profile/edit">Profile</a>
+{{else}}
+<div class="hero">
+  <div class="statement">
+    <h1>Connecting Advertisers with Infulencers</h1>
+    <h3>Inflencers get paid by connecting with top advertisers and advertisers connect with the top influencial people on the internet to reach a bigger target audience,</h3>
+  </div>
+</div>
 {{/if}}

@@ -1,4 +1,5 @@
 @import 'chat';
+@import 'profile';
 $dark: #000;
 $light: #fff;
 $lightGray: #ccc;
@@ -32,9 +33,18 @@ $lightGray: #ccc;
 }
 .hero{
   background-image: url(../img/alps.jpg);
-    background-color: rgb(189, 196, 6);
-    height: 574px;
-    background-size:     cover;
-    background-repeat:   no-repeat;
-    background-position: center center; 
+  background-color: rgb(189, 196, 6);
+  height: 574px;
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center; 
+  margin-top: -20px;
+}
+.statement{
+  margin: auto auto;
+}
+.centered{
+  // width: 100%;
+  display: flex;
+  justify-content: center;
 }

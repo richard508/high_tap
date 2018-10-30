@@ -1,14 +1,23 @@
-<p>Username: {{user.username}}</p>
-<p>Email: {{user.email}}</p>
-<p>Age: {{user.age}}</p>
-<p>Location: {{user.location}}</p>
-<p>Family: {{user.familyStatus}}</p>
+<div class="centered">
+  <section class="card profile">
+  <aside>
+    <img class="img" src="/img/img_avatar.png" alt="avatar">
+  </aside>
+  <p>Username: {{user.username}}</p>
+  <p>Email: {{user.email}}</p>
+  <p>Age: {{user.age}}</p>
+  <p>Location: {{user.location}}</p>
+  <p>Family: {{user.familyStatus}}</p>
 
 
-My Interests:
-{{#each user.interests}}
-<span>{{interestList}}</span>
-{{/each}}
+  My Interests:
+  {{#each user.interests}}
+  <span>{{interestList}}</span>
+  {{/each}}
+  </section>
 
-<a href="/user/{{user._id}}/profile/edit">Edit My Profile</a>
-
+  <section class="card profile clearfix">
+    <a href="/user/{{user._id}}/search" class="btn btn-primary">Search Influencers and Advertisers</a>
+    <a href="/user/{{user._id}}/chat" class="btn btn-primary">My Chat Window</a>
+  </section>
+</div>

@@ -67,6 +67,37 @@ h2 {
   border-radius: 0 0 2px 2px;
 }
 
+.profile {
+  width: 50%;
+  padding: 15px;
+}
+
+.card {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.pstatement {
+  position: relative;
+  width: 70%;
+}
+
+.profileCenter {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.img {
+  width: 25%;
+}
+
+.clearfix {
+  clear: both;
+}
+
 .bar {
   background: #000;
 }
@@ -118,5 +149,19 @@ h2 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  margin-top: -20px;
+}
+
+.statement {
+  margin: auto auto;
+}
+
+.centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */
