@@ -44,10 +44,13 @@ $lightGray: #ccc;
   margin: auto auto;
 }
 .centered{
-  // width: 100%;
   display: flex;
   justify-content: center;
 }
 .inputField{
   width:50%;
+}
+.left{
+  float: left;
+  margin-right: 5px;
 }

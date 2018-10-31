@@ -68,7 +68,7 @@ h2 {
 }
 
 .profile {
-  width: 50%;
+  width: 49%;
   padding: 15px;
 }
 
@@ -167,5 +167,10 @@ h2 {
 
 .inputField {
   width: 50%;
+}
+
+.left {
+  float: left;
+  margin-right: 5px;
 }
 /*# sourceMappingURL=style.css.map */

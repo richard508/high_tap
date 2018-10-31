@@ -1,48 +1,57 @@
-<section class="profile">
-<form action="/user/{{currentUser._id}}/search" method="GET">
-  <div class="form-group">
-    <label for="age">Age</label>
-    <input class="form-control" type="number" name="age" id="age">
-  </div>
-  <div class="form-group">
-    <label for="familyStatus">Family Status</label>
-    <select name="familyStatus" class="custom-select" id="inputGroupSelect01">
-      <option></option>
-    <option value="Single">Single</option>
-    <option value="Married">Married</option>
-    <option value="Married with Kids">Married with Kids</option>
-  </select>
-  </div>
-  <div class="form-group">
-    <label for="location">Loction</label>
-    <input class="form-control" type="text" name="location" id="location" placeholder="Enter City, State">
-  </div>
-  {{#each interest}}
-    <div>
-      <input class="ina1" type="checkbox" name="interests" value="{{_id}}"> {{interestList}}
+<section class="masthead d-flex">
+	<div class="container my-auto">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+        <h2>Search all infulencers</h2>
+        <section class="profile">
+          <form action="/user/{{currentUser._id}}/search" method="GET">
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input class="form-control" type="number" name="age" id="age">
+            </div>
+            <div class="form-group">
+              <label for="familyStatus">Family Status</label>
+              <select name="familyStatus" class="custom-select" id="inputGroupSelect01">
+                <option></option>
+              <option value="Single">Single</option>
+              <option value="Married">Married</option>
+              <option value="Married with Kids">Married with Kids</option>
+            </select>
+            </div>
+            <div class="form-group">
+              <label for="location">Loction</label>
+              <input class="form-control" type="text" name="location" id="location" placeholder="Enter City, State">
+            </div>
+            {{#each interest}}
+              <div>
+                <input class="ina1" type="checkbox" name="interests" value="{{_id}}"> {{interestList}}
+              </div>
+            {{/each}}
+            <button type="submit">Search</button>
+          </form>
+          <a href="/user/{{currentUser._id}}/search">Clear search</a>
+          <br /><br /><br />
+        </section>
+        {{#each user}}
+        <section class="card profile left">
+          <p>Username: {{username}}</p>
+          <p>Email: {{email}}</p>
+          <p>Type: {{ina}}</p>
+          <p>Age: {{age}}</p>
+          <p>Location: {{location}}</p>
+          <p>Family: {{familyStatus}}</p>
+
+
+          My Interests:
+          {{#each interests}}
+            <span>{{interestList}}</span>
+          {{/each}}
+          <br />
+          <a href="/user/{{_id}}/profile"><button class="btn btn-primary" id="{{_id}}">Connect us</button></a>
+          <br /><br /><br />
+        </section>
+        {{/each}}
+      </div>
     </div>
-  {{/each}}
-  <button type="submit">Search</button>
-</form>
-<a href="/user/{{currentUser._id}}/search">Clear search</a>
-<br /><br /><br />
+  </div>
 </section>
-{{#each user}}
-<section class="card profile">
-  <p>Username: {{username}}</p>
-  <p>Email: {{email}}</p>
-  <p>Type: {{ina}}</p>
-  <p>Age: {{age}}</p>
-  <p>Location: {{location}}</p>
-  <p>Family: {{familyStatus}}</p>
-
-
-  My Interests:
-  {{#each interests}}
-    <span>{{interestList}}</span>
-  {{/each}}
-  <br />
-  <a href="/user/{{_id}}/profile"><button class="btn btn-primary" id="{{_id}}">Connect us</button></a>
-  <br /><br /><br />
-</section>
-{{/each}}
