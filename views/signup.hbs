@@ -1,48 +1,54 @@
 {{#if message}}
-  <div class="alert alert-danger">{{message}}</div>
+	<div class="alert alert-danger">{{message}}</div>
 {{/if}}
-<div class="centered">
-  <h2>Signup</h2>
-  <form method="post" action="/signup">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input required class="form-control" type="text" name="username" id="username">
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input required class="form-control" type="text" name="email" id="email">
-    </div>
-    <div class="form-group ina">
-      <label for="ina">What are you?</label><br />
-      <input class="ina1" type="checkbox" name="ina" value="Influencer"> Influencer <br />
-      <input class="ina2" type="checkbox" name="ina" value="Advertiser"> Advertiser
-    </div>
+<section class="masthead d-flex">
+	<div class="container my-auto">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				<h1 class="text-uppercase">Signup</h1>
+        <form method="post" action="/signup">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input required class="form-control inputField" type="text" name="username" id="username">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input required class="form-control inputField" type="text" name="email" id="email">
+          </div>
+          <div class="form-group ina">
+            <label for="ina">What are you?</label><br />
+            <input class="ina1" type="checkbox" name="ina" value="Influencer"> Influencer <br />
+            <input class="ina2" type="checkbox" name="ina" value="Advertiser"> Advertiser
+          </div>
 
-    <div class="form-group inf hidden">
-      <label for="iFollower">Number of Instagram Followers:</label>
-      <input class="form-control" type="text" name="iFollower" id="iFollower">
+          <div class="form-group inf hidden">
+            <label for="iFollower">Number of Instagram Followers:</label>
+            <input class="form-control inputField" type="text" name="iFollower" id="iFollower">
+          </div>
+
+          <div class="form-group ads hidden">
+            <label for="companyName">Company Name:</label>
+            <input class="form-control inputField" type="text" name="companyName" id="companyName">
+
+            <label for="category">Category:</label>
+            <input class="form-control inputField" type="text" name="category" id="category">
+
+            <label for="size">Company Size:</label>
+            <input class="form-control inputField" type="text" name="size" id="size">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input required class="form-control inputField" type="password" name="password" id="password">
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Password Confirmation</label>
+            <input required class="form-control inputField" type="password" name="confirmPassword" id="confirmPassword">
+          </div>
+
+          <input class="submit btn btn-default" type="submit">
+        </form>
+      </div>
     </div>
-
-    <div class="form-group ads hidden">
-      <label for="companyName">Company Name:</label>
-      <input class="form-control" type="text" name="companyName" id="companyName">
-
-      <label for="category">Category:</label>
-      <input class="form-control" type="text" name="category" id="category">
-
-      <label for="size">Company Size:</label>
-      <input class="form-control" type="text" name="size" id="size">
-    </div>
-
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input required class="form-control" type="password" name="password" id="password">
-    </div>
-    <div class="form-group">
-      <label for="confirmPassword">Password Confirmation</label>
-      <input required class="form-control" type="password" name="confirmPassword" id="confirmPassword">
-    </div>
-
-    <input class="submit btn btn-default" type="submit">
-  </form>
-</div>
+  </div>
+</section>
