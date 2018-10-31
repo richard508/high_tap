@@ -11,7 +11,11 @@
   <body>
     <nav class="wrapper bar navbar-default">
       <div class="flexNav">
-        <a class="navbar-brand" href="/">HIGH TAP</a>
+        {{#if currentUser}}
+          <a class="navbar-brand" href="/user/{{currentUser.id}}/profile">HIGH TAP</a>
+        {{else}}
+          <a class="navbar-brand" href="/">HIGH TAP</a>
+        {{/if}}
         <ul class="nav navbar-nav">
           {{#if currentUser}}
             <li><a href="/user/{{currentUser._id}}/profile">My Profile</a></li>
