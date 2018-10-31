@@ -164,4 +164,8 @@ h2 {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+.inputField {
+  width: 50%;
+}
 /*# sourceMappingURL=style.css.map */

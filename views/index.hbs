@@ -1,10 +1,24 @@
-{{#if currentUser}}
- Welcome {{currentUser.username}}. THnak you for signup to High-Tap. To have the perfect full experience of our site please comeplete your profile at <a href="user/{{currentUser._id}}/profile/edit">Profile</a>
-{{else}}
-<div class="hero">
-  <div class="statement">
-    <h1>Connecting Advertisers with Infulencers</h1>
-    <h3>Inflencers get paid by connecting with top advertisers and advertisers connect with the top influencial people on the internet to reach a bigger target audience,</h3>
-  </div>
-</div>
-{{/if}}
+<header class="masthead text-center text-white d-flex">
+	<div class="container my-auto">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				{{#if currentUser}}
+        <h1 class="text-uppercase">
+						<strong>Welcome {{currentUser.username}}!</strong>
+					</h1>
+          <p class="text-faded mb-5">Thank you for signup to High-Tap. To have the perfect full experience of our site please comeplete your profile at <a href="user/{{currentUser._id}}/profile/edit">Profile</a></p>
+				{{else}}
+					<h1 class="text-uppercase">
+						<strong>Connecting online infulencers with the best advertisers</strong>
+					</h1>
+					<hr>
+				</div>
+				<div class="col-lg-8 mx-auto">
+					<p class="text-faded mb-5">Inflencers get paid by connecting with top advertisers and advertisers connect with the top influencial people on the internet to reach a bigger target audience!</p>
+					<a class="btn btn-primary btn-xl js-scroll-trigger" href="/signup">Signup and Find out More</a>
+				{{/if}}
+	      </div>
+	    </div>
+    </div>
+	</div>
+</header>
