@@ -1,38 +1,48 @@
-<p>Update Interest:</p>
-<form action="/user/{{user._id}}?_method=PUT" method="POST">
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input required class="form-control" type="text" name="email" id="email" value="{{user.email}}">
-  </div>
-  <div class="form-group">
-    <label for="age">Age</label>
-    <input required class="form-control" type="number" name="age" id="age" value="{{user.age}}">
-  </div>
-  <div class="form-group">
-    <label for="familyStatus">Family Status</label>
-    <select name="familyStatus" class="custom-select" id="inputGroupSelect01">
-    <option value="Single">Single</option>
-    <option value="Married">Married</option>
-    <option value="Married with Kids">Married with Kids</option>
-  </select>
-  </div>
-  <div class="form-group">
-    <label for="location">Loction</label>
-    <input required class="form-control" type="text" name="location" id="location" placeholder="Enter City, State"value="{{user.location}}">
-  </div>
-
-  <p>Update my interests:</p>
-  {{#each interest}}
-    <div>
-      <input class="ina1" type="checkbox" name="interests" value="{{_id}}"> {{interestList}}
-    </div>
-  {{/each}}
-  <button type="submit">Update my interest</button>
-</form>
+<section class="masthead d-flex">
+	<div class="container my-auto">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+        <h2>Profile Edit:</h2>
+        <form action="/user/{{user._id}}?_method=PUT" method="POST">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input required class="form-control inputField" type="text" name="email" id="email" value="{{user.email}}">
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input required class="form-control inputField" type="number" name="age" id="age" value="{{user.age}}">
+          </div>
+          <div class="form-group">
+            <label for="familyStatus">Family Status</label>
+            <select name="familyStatus" class="custom-select" id="inputGroupSelect01">
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Married with Kids">Married with Kids</option>
+          </select>
+          </div>
+          <div class="form-group">
+            <label for="location">Loction</label>
+            <input required class="form-control inputField" type="text" name="location" id="location" placeholder="Enter City, State"value="{{user.location}}">
+          </div>
+          <h2>Update my interests:</h2>
+          {{#each interest}}
+            <div>
+              <input class="ina1" type="checkbox" name="interests" value="{{_id}}"> {{interestList}}
+            </div>
+          {{/each}}
+          <br />
+          <br />
+          <button class="btn btn-primary" type="submit">Update Profile</button>
+        </form>
+      </div>
+	  </div>
+	</div>
+</section>
 <br />
 <br />
 <br />
 <h3 style="color:red;">DANGER ZONE:</h3>
 <form action="/user/{{user._id}}?_method=DELETE" method="POST">
-  <button type="submit">DELETE MY PROFILE</button>
+	<button class="btn btn-danger" type="submit">DELETE MY PROFILE</button>
 </form>
+<br /><br />
